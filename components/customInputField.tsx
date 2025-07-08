@@ -19,6 +19,8 @@ import {
   SimpleLineIcons,
   Zocial,
 } from "@expo/vector-icons";
+import { twMerge } from "tailwind-merge";
+import clsx from "clsx";
 
 //* Initializing the short name for the icons for our use:
 type Family =
@@ -90,6 +92,7 @@ const CustomInputField = forwardRef<TextInput, inputFieldType>((props, ref) => {
     secureTextEntry,
     ...rest
   } = props;
+
   return (
     <TextInput
       ref={ref}
@@ -97,9 +100,15 @@ const CustomInputField = forwardRef<TextInput, inputFieldType>((props, ref) => {
       placeholderTextColor={colors.Grey.customGrey}
       value={value}
       onChangeText={onChangeText}
-      className={`${className} border border-Grey-customGrey w-full h-full bg-White-customWhite rounded-md text-Black-thirdBlack text-base leading-5 py-3`}
       style={[styleSheet, { paddingVertical: 0 }]}
       secureTextEntry={secureTextEntry}
+      className={twMerge(
+        clsx(
+          `border border-Grey-customGrey w-full h-full bg-White-customWhite rounded-md text-Black-thirdBlack text-base leading-5 py-3 px-2`,
+          className
+        )
+      )}
+      {...rest}
     />
   );
 });

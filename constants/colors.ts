@@ -8,13 +8,16 @@ export const colors = {
     customWhite: "#FFFFFF",
     lightWhite: "#F6F8FA",
     semiWhite: "#EEEEEE",
+    secondWhite: "#EFEFEF",
   },
 
   Black: {
     customBlack: "#000000",
+    semiBlack: "#161616",
     secondaryBlack: "#1A1C1E",
     thirdBlack: "#121A2C",
     fourthBlack: "#242424",
+    fifthBlack: "#494B4C",
   },
 
   Grey: {
@@ -24,6 +27,9 @@ export const colors = {
     thirdGrey: "#4B4B4C",
     forthGrey: "#7B7B7B",
     fifthGrey: "#979797",
+    sixthGrey: "#C8CCD0",
+    seventhGrey: "#DFEAFB",
+    eighthGrey: "#A3A3A3",
   },
 
   Purple: {

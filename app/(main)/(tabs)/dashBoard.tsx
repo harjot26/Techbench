@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity, Image, ScrollView } from "react-native";
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import CustomSafeAreaView from "@/components/customSafeAreaView";
 import { Link, router } from "expo-router";
 
@@ -19,6 +19,7 @@ import { Poppins_400Regular } from "@expo-google-fonts/poppins";
 import { colors } from "@/constants/colors";
 import { PieChart } from "react-native-gifted-charts";
 import CustomLabelRender from "@/components/customLabelRender";
+import { useFocusEffect } from "@react-navigation/native";
 
 const DashBoard = () => {
   const { width } = useWindowDimensions();
@@ -71,6 +72,18 @@ const DashBoard = () => {
   ];
 
   const font = useFont(Poppins_400Regular);
+
+  useFocusEffect(
+    useCallback(() => {
+      // This code runs every time the screen comes into focus
+      console.log("Screen focused or came back");
+
+      return () => {
+        // Cleanup if needed when screen loses focus
+        console.log("Screen unfocused");
+      };
+    }, [])
+  );
   return (
     <ScrollView
       contentContainerStyle={{ flexGrow: 1 }}

@@ -1,9 +1,10 @@
 import { View, Text } from "react-native";
-import React, { use } from "react";
+import React, { use, useCallback } from "react";
 import { Bar, CartesianChart } from "victory-native";
 import { useFont } from "@shopify/react-native-skia";
 import { Poppins_400Regular } from "@expo-google-fonts/poppins";
 import { colors } from "@/constants/colors";
+import { useFocusEffect } from "@react-navigation/native";
 
 const Calender = () => {
   const victoryData = [
@@ -28,6 +29,18 @@ const Calender = () => {
       label: "May",
     },
   ];
+
+  useFocusEffect(
+    useCallback(() => {
+      // This code runs every time the screen comes into focus
+      console.log("Screen focused or came back");
+
+      return () => {
+        // Cleanup if needed when screen loses focus
+        console.log("Screen unfocused");
+      };
+    }, [])
+  );
 
   const font = useFont(Poppins_400Regular);
   return (

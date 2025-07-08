@@ -6,7 +6,7 @@ const Procurement = () => {
   return (
     // <CustomSafeAreaView>
     <View className={`bg-White-customWhite flex-1`}>
-      <Text className="">Procurement</Text>
+      <Text className="">Procurementt</Text>
     </View>
     // </CustomSafeAreaView>
   );

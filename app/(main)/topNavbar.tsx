@@ -132,66 +132,76 @@ const TopNavbar = ({ children }: prop) => {
      /> */}
 
       <View
-        className={`h-full flex flex-row gap-8  items-center px-5 bg-lime-200. border-b-2. border-b-Grey-forthGrey. `}
+        // className={`h-full flex flex-row gap-8  items-center px-5. bg-lime-200. border-b-2. border-b-Grey-forthGrey. `}
+        className={`relative h-full w-full px-5`}
       >
-        {data.map(({ Icon, name, label, href }) => {
-          // matching current url with is Active
-          const isActive = pathName === href;
-          console.log("active:", isActive);
+        <View className="absolute bottom-0 left-0 right-0 h-[1px] bg-gray-300 z-0" />
 
-          return (
-            <Link href={href} asChild key={href}>
-              <TouchableOpacity
-                className={`h-full flex flex-col items-center justify-end bg-pink-200.`}
-              >
-                {/* <Text
+        <View className="relative z-10 flex flex-row gap-8 items-center h-14">
+          {data.map(({ Icon, name, label, href }) => {
+            // matching current url with is Active
+            const isActive = pathName === href;
+            console.log("active:", isActive);
+
+            return (
+              <Link href={href} asChild key={href}>
+                <TouchableOpacity
+                  className={`h-full flex flex-col items-center justify-end bg-pink-200.`}
+                >
+                  {/* <Text
                   className={`${
                     isActive ? "text-primary" : "text-Black-customBlack"
                   }`}
                 >
                   {icon}
                 </Text> */}
-                <Icon
-                  name={name as string}
-                  size={
-                    width < 430 && isActive
-                      ? 16
-                      : width < 430
-                      ? 14
-                      : isActive
-                      ? 20
-                      : 16
-                  }
-                  color={isActive ? colors.primary : ""}
-                />
-                <Text
-                  className={`${getPlatForm("medium")} my-1 ${
-                    isActive
-                      ? "text-sm lg:text-lg text-primary "
-                      : "text-xs lg:text-base text-Grey-forthGrey"
-                  }`}
-                >
-                  {label}
-                </Text>
-                {/* {isActive ? ( */}
-                <View
+                  <Icon
+                    name={name as string}
+                    size={
+                      width < 430 && isActive
+                        ? 16
+                        : width < 430
+                        ? 14
+                        : isActive
+                        ? 20
+                        : 16
+                    }
+                    color={isActive ? colors.primary : ""}
+                  />
+                  <Text
+                    className={`${getPlatForm("medium")} my-1 ${
+                      isActive
+                        ? "text-sm lg:text-lg text-primary "
+                        : "text-xs lg:text-base text-Grey-forthGrey"
+                    }`}
+                  >
+                    {label}
+                  </Text>
+                  {/* {isActive ? ( */}
+                  {/* <View
                   className={` w-[100%] h-1 rounded-tl rounded-tr ${
-                    isActive ? "bg-primary" : "bg-transparent"
+                    isActive ? "bg-primary" : "bg-inputBorderColor"
                   } `}
-                ></View>
+                ></View> */}
 
-                {/* //   <View
-                //     className={` w-[120%] h-1 rounded-tl rounded-tr bg-primary `}
-                //   ></View>
-                // ) : (
-                //   <View
-                //     className={`w-full h-1 rounded-tl rounded-tr bg-gray-400`}
-                //   ></View>
-                // )} */}
-              </TouchableOpacity>
-            </Link>
-          );
-        })}
+                  {/* {isActive ? (
+                  <View
+                    className={` w-[120%] h-1 rounded-tl rounded-tr bg-primary `}
+                  ></View>
+                ) : (
+                  <View
+                    className={`w-full h-1 rounded-tl rounded-tr bg-gray-400`}
+                  ></View>
+                )} */}
+
+                  {isActive && (
+                    <View className="w-[120%] h-1 rounded-tl rounded-tr bg-primary" />
+                  )}
+                </TouchableOpacity>
+              </Link>
+            );
+          })}
+        </View>
       </View>
     </ScrollView>
   );

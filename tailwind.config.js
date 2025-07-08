@@ -25,6 +25,7 @@ module.exports = {
           customWhite: "#FFFFFF",
           lightWhite: "#F6F8FA",
           semiWhite: "#EEEEEE",
+          secondWhite: "#EFEFEF",
         },
 
         Black: {
@@ -33,6 +34,7 @@ module.exports = {
           semiBlack: "#161616",
           thirdBlack: "#121A2C",
           fourthBlack: "#242424",
+          fifthBlack: "#494B4C",
         },
 
         Grey: {
@@ -42,6 +44,9 @@ module.exports = {
           thirdGrey: "#4B4B4C",
           forthGrey: "#7B7B7B",
           fifthGrey: "#979797",
+          sixthGrey: "#C8CCD0",
+          seventhGrey: "#DFEAFB",
+          eighthGrey: "#A3A3A3",
         },
 
         Purple: {

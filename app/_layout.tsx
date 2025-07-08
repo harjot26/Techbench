@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
 import { Text, View } from "react-native";
 import Header from "./(main)/header";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 // This will help us to prevents SplashScreen from Auto Hiding while the fonts are in loading state.
 SplashScreen.preventAutoHideAsync();
@@ -23,7 +24,7 @@ export default function MainLayout() {
     return null;
   }
   return (
-    <>
+    <GestureHandlerRootView>
       <Stack
         screenOptions={{
           headerShown: false,
@@ -36,6 +37,6 @@ export default function MainLayout() {
         <Stack.Screen name="(main)" />
         {/* <Stack.Screen name="(root)/(topBar)" /> */}
       </Stack>
-    </>
+    </GestureHandlerRootView>
   );
 }

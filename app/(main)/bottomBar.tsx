@@ -40,7 +40,7 @@ const BottomBar = () => {
 
   return (
     <View
-      className={`bg-White-customWhite bg-pink-200. w-full flex flex-row px-5 gap-4. items-center justify-between h-20 max-h-full`}
+      className={`bg-White-customWhite bg-pink-200. w-full flex flex-row px-5 gap-4. items-center justify-between h-20 max-h-full `}
     >
       {tabData.map(({ href, label, name, Icon }) => {
         const isActive = pathName === href;
@@ -58,17 +58,17 @@ const BottomBar = () => {
               <Text
                 className={`${
                   isActive
-                    ? "visible text-primary text-sm lg:text-base"
-                    : "hidden"
+                    ? " text-primary text-sm lg:text-base"
+                    : "text-Black-semiBlack text-xs lg:text-sm"
                 }`}
               >
                 {label}
               </Text>
-              <View
+              {/* <View
                 className={`h-1 w-[33%] rounded-tr rounded-tl ${
                   isActive ? "bg-primary" : "bg-transparent"
                 }`}
-              ></View>
+              ></View> */}
             </TouchableOpacity>
           </Link>
         );

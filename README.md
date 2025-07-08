@@ -171,3 +171,22 @@ Join our community of developers creating universal apps.
 - [React-Native-Victory-Chart]:
 - bun add react-native-gesture-handler @shopify/react-native-skia
 - bun add victory-native
+
+- [Multiline/Autogrow-Text-Input]:
+- npm install react-native-autogrow-textinput-ts
+
+- [Toggle-Switch-Package]:
+- npm i react-native-switch-toggle
+
+- [Tailwind-clsx-package]:
+- npm i clsx (/-PackageInstalled to arrange the order of tailwind class all things are taken care from background itself-/)
+
+- [Tailwind-twd-merge-package]:
+- npm i tailwind-merge (It purpose to merge the confilicting property overides in merging.)
+
+- [Range-Slider]:
+- npm i rn-range-slider
+- npm i @react-native-community/slider
+
+- [CheckBox]:
+- npx expo install expo-checkbox

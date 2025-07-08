@@ -2,6 +2,8 @@ import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import { buttonType } from "@/types/type";
 import { getPlatForm } from "@/utils/platForm";
+import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 
 const CustomButton = ({
   text,
@@ -14,13 +16,28 @@ const CustomButton = ({
   return (
     <TouchableOpacity
       onPress={handlePress}
-      className={`${className} w-full h-14 rounded-md flex justify-center items-center bg-buttonColor border border-buttonColor`}
+      className={twMerge(
+        clsx(
+          ` w-full h-14 rounded-md flex justify-center items-center bg-buttonColor border border-buttonColor `,
+          className
+        )
+      )}
       style={[styleSheet, {}]}
     >
       <Text
-        className={`${classNameText} ${getPlatForm(
-          "medium"
-        )} text-sm lg:text-lg text-White-customWhite`}
+        // className={` ${getPlatForm(
+        //   "medium"
+        // )} text-sm lg:text-lg text-White-customWhite ${classNameText}`}
+        // style={[styleSheetText, {}]}
+
+        className={twMerge(
+          clsx(
+            ` ${getPlatForm(
+              "medium"
+            )} text-sm lg:text-lg text-White-customWhite`,
+            classNameText
+          )
+        )}
         style={[styleSheetText, {}]}
       >
         {text}
